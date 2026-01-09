@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Marine Perrin – Graduate Programme Dirigeant Carrefour</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lora:wght@400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #0033A0; /* Bleu Carrefour */
+      --accent: #E3001B;  /* Rouge Carrefour */
+      --bg: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6b6b6b;
+      --card: #f7f9fc;
+      --border: #dfe3eb;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: "Lora", serif;
+    }
+
+    h1, h2, h3, .logo, .hero-role, .section-title {
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 32px 24px 64px;
+      border: 3px solid var(--primary);
+      border-radius: 16px;
+      background: var(--card);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 26px;
+      color: var(--primary);
+    }
+
+    .tagline {
+      font-size: 15px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    nav a {
+      margin-left: 16px;
+      font-size: 15px;
+      color: var(--primary);
+      font-family: "Cormorant Garamond", serif;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* HERO */
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 1.2fr);
+      gap: 32px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+
+    .hero-title {
+      font-size: 34px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      line-height: 1.3;
+      color: var(--primary);
+    }
+
+    .hero-role {
+      font-size: 20px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      margin-bottom: 20px;
+      font-size: 17px;
+    }
+
+    .btn-primary {
+      padding: 12px 24px;
+      background: var(--primary);
+      color: white;
+      border-radius: 999px;
+      font-size: 15px;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .btn-secondary {
+      padding: 10px 20px;
+      border-radius: 999px;
+      font-size: 15px;
+      border: 1px solid var(--primary);
+      background: white;
+      cursor: pointer;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hero-highlights {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .pill {
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-size: 13px;
+      background: #e8eefc;
+      color: var(--primary);
+      font-family: "Cormorant Garamond", serif;
+    }
+
+    .hero-card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+    }
+
+    .hero-metric-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .hero-metric-value {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: var(--primary);
+    }
+
+    .hero-metric-sub {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 16px;
+    }
+
+    .hero-badges span {
+      display: inline-block;
+      margin-right: 8px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* Sections */
+    section {
+      margin-bottom: 40px;
+    }
+
+    .section-title {
+      font-size: 22px;
+      font-weight: 600;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--primary);
+    }
+
+    .grid {
+      display: grid;
+      gap: 16px;
+    }
+
+    .grid-3 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .card {
+      background: white;
+      border-radius: 12px;
+      border: 1px solid var(--border);
+      padding: 16px 18px;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 4px;
+      color: var(--primary);
+    }
+
+    .card-subtitle {
+      font-size: 15px;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .card-list {
+      font-size: 15px;
+      margin-left: 16px;
+      color: var(--text);
+    }
+
+    /* Contact */
+    .contact-section {
+      text-align: center;
+      padding: 24px 16px;
+      background: var(--primary);
+      color: white;
+      border-radius: 16px;
+    }
+
+    .contact-section p {
+      color: #e5e5e5;
+      margin-bottom: 16px;
+      font-size: 16px;
+    }
+
+    .contact-info a {
+      color: var(--accent);
+    }
+
+    footer {
+      margin-top: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+
+    <header>
+      <div>
+        <div class="logo">MARINE PERRIN</div>
+        <div class="tagline">Graduate Programme Dirigeant Carrefour</div>
+      </div>
+      <nav>
+        <a href="#experience">Expérience</a>
+        <a href="#skills">Compétences</a>
+        <a href="#education">Formation</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <h1 class="hero-title">Construire la transformation du retail en rejoignant un leader mondial de la grande distribution.</h1>
+
+        <div class="hero-role">Candidate – Graduate Programme Dirigeant Carrefour</div>
+
+        <p class="hero-text">
+          Passionnée par l’univers de la grande distribution et forte d’une expérience analytique et commerciale chez Nestlé, 
+          je souhaite intégrer le Graduate Programme Dirigeant Carrefour pour comprendre les enjeux stratégiques côté enseigne 
+          et contribuer à la transformation d’un leader du retail.
+        </p>
+
+        <a href="CV-MARINE.pdf" class="btn-primary" download>Télécharger mon CV</a>
+
+        <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
+          Me contacter
+        </button>
+
+        <div class="hero-highlights">
+          <span class="pill">Grande distribution</span>
+          <span class="pill">Analyse & Performance</span>
+          <span class="pill">Transformation Retail</span>
+          <span class="pill">Vision stratégique</span>
+          <span class="pill">Expérience Nestlé</span>
+          <span class="pill">Mobilité internationale</span>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <div class="hero-metric-label">Profil</div>
+        <div class="hero-metric-value">Future Retail Leader</div>
+        <div class="hero-metric-sub">
+          Expérience FMCG, coordination cross‑fonctionnelle, pilotage de performance et forte appétence pour les enjeux magasins & siège.
+        </div>
+        <div class="hero-badges">
+          <span>• FMCG</span>
+          <span>• Analyse commerciale</span>
+          <span>• Gestion opérationnelle</span>
+          <span>• Retail</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <h2 class="section-title">Expérience Professionnelle</h2>
+
+      <div class="grid grid-3">
+
+        <!-- CATEGORY MANAGER -->
+        <div class="card">
+          <div class="card-title">Category Manager / Responsable Marketing Enseigne – Café</div>
+          <div class="card-subtitle">Nestlé France – Auchan, Casino, Monoprix, Franprix (Sept. 2025 – Janv. 2026)</div>
+          <ul class="card-list">
+            <li>Mise en œuvre de la stratégie commerciale et des plans d’action par enseigne et par canal.</li>
+            <li>Pilotage du plan promotionnel : construction, suivi budgétaire et pré‑évaluations avec le contrôle de gestion.</li>
+            <li>Analyse marché & catégorie via NIELSEN, KANTAR, DATAIMPACT, A3Distrib pour identifier leviers de croissance.</li>
+            <li>Développement d’une relation client permettant de positionner Nestlé comme <strong>category captain</strong> sur la catégorie Café.</li>
+            <li>Collaboration permanente avec marketing & direction force de vente pour garantir l’exécution du plan d’activité national en magasins.</li>
+          </ul>
+        </div>
+
+        <!-- ACHATS INDIRECTS -->
+        <div class="card">
+          <div class="card-title">Acheteuse Stratégique – Indirects Marketing & Ventes</div>
+          <div class="card-subtitle">Nestlé France (Sept. 2024 – Sept. 2025)</div>
+          <ul class="card-list">
+            <li>Gestion d’un panel fournisseurs et sourcing de nouveaux prestataires pour les besoins marketing & commerciaux.</li>
+            <li>Pilotage de 15 appels d’offres (100 K€ à 1,5 M€) : rédaction des cahiers des charges, analyse, négociation et contractualisation.</li>
+            <li>Coordination de projets transverses avec IT, logistique, finance et équipes marketing.</li>
+            <li>Analyse des risques, conformité et optimisation des coûts.</li>
+            <li>Suivi de la performance fournisseurs et amélioration continue des process achats.</li>
+          </ul>
+        </div>
+
+        <!-- ASSISTANTE CATEGORY MANAGER -->
+        <div class="card">
+          <div class="card-title">Assistante Category Manager / Responsable Marketing Enseigne</div>
+          <div class="card-subtitle">Nestlé France – Carrefour, Provera, Casino (Janv. – Juin 2024)</div>
+          <ul class="card-list">
+            <li>Reporting mensuel des performances retail et newsletters hebdomadaires (20 parties prenantes).</li>
+            <li>Analyses de marché, participation aux plans business et réunions distributeurs.</li>
+            <li>Gestion de 5 opérations de trade marketing (briefs, coordination, exécution).</li>
+            <li>Refonte du site e‑commerce HOURA : UX, tests, présentation et validation client.</li>
+            <li>Contribution aux planogrammes et analyses concurrentielles.</li>
+          </ul>
+        </div>
+
+        <!-- FILORGA -->
+        <div class="card">
+          <div class="card-title">Assistante Administration Marketing & Ventes</div>
+          <div class="card-subtitle">Filorga – Groupe Colgate (Juil. – Déc. 2023)</div>
+          <ul class="card-list">
+            <li>Suivi des contrats, flux de ventes et relations clients.</li>
+            <li>Coordination logistique vers 120 pharmacies : stocks, livraisons, litiges.</li>
+            <li>Contribution à la stratégie prix, remises et conditions commerciales.</li>
+            <li>Support aux équipes commerciales et marketing dans un environnement premium.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <h2 class="section-title">Compétences</h2>
+
+      <div class="grid grid-3">
+
+        <div class="card">
+          <div class="card-title">Retail & Grande Distribution</div>
+          <ul class="card-list">
+            <li>Compréhension des enjeux magasins & siège.</li>
+            <li>Analyse de performance & recommandations.</li>
+            <li>Vision 360° du parcours shopper.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Analyse & Pilotage</div>
+          <ul class="card-list">
+            <li>Reporting & KPI tracking.</li>
+            <li>Budgeting & suivi opérationnel.</li>
+            <li>Power BI, Excel avancé, SAP.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <div class="card-title">Soft Skills</div>
+          <ul class="card-list">
+            <li>Rigueur & sens du détail.</li>
+            <li>Esprit analytique.</li>
+            <li>Collaboration cross‑fonctionnelle.</li>
+            <li>Adaptabilité & curiosité.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+      <h2 class="section-title">Formation</h2>
+
+      <div class="grid grid-3">
+        <div class="card"><div class="card-title">Master 2 – Innovative Project Management</div><div class="card-subtitle">Rennes School of Business</div></div>
+        <div class="card"><div class="card-title">Master 1 – Marketing & Commerce</div><div class="card-subtitle">Rennes School of Business</div></div>
+        <div class="card"><div class="card-title">Erasmus – Dublin</div><div class="card-subtitle">Technological University of Dublin</div></div>
+        <div class="card"><div class="card-title">Bachelor – GlobalTech & Cybersecurity</div><div class="card-subtitle">Rennes School of Business</div></div>
+        <div class="card"><div class="card-title">Classe Préparatoire Scientifique</div><div class="card-subtitle">Lycée Ampère</div></div>
+        <div class="card"><div class="card-title">Baccalauréat Scientifique – TB</div><div class="card-subtitle">Lycée Daudet</div></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="contact-section">
+      <h2 class="section-title" style="color:white;">Contact</h2>
+      <p>
+        Disponible pour rejoindre le Graduate Programme Dirigeant Carrefour et contribuer à la transformation du retail.
+      </p>
+      <div class="contact-info">
+        Email : <a href="mailto:perrin.marinelaure@gmail.com">perrin.marinelaure@gmail.com</a><br />
+        Téléphone : +33 6 82 33 52 08<br />
+        LinkedIn : <a href="https://www.linkedin.com/in/marine-perrin-920197213" target="_blank">/in/marine-perrin</a>
+      </div>
+
+    <footer>
+      © Marine Perrin – Candidate Graduate Programme Dirigeant Carrefour
+    </footer>
+
+  </div>
+</body>
+</html>
